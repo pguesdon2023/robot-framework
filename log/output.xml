@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-02-23T16:07:41.296721" rpa="false" schemaversion="5">
+<suite id="s1" name="Test05" source="D:\OneDrive - ENI Ecole Informatique\_ENI testeur\workspace-pycharm\formation_robot\test05.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2024-02-23T16:07:41.404937" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${saucedemo}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-23T16:07:41.404937" elapsed="4.027089"/>
+</kw>
+<test id="s1-t1" name="Test Connexion_Deconnexion_users_ko" line="24">
+<kw name="Connexion_Deconnexion_KO" owner="test05_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:45.434130" level="INFO">Typing text 'locked_out_user' into text field 'name:user-name'.</msg>
+<arg>name:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.433083" elapsed="0.067485"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:45.501520" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.501520" elapsed="0.017437"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:45.518968" level="INFO">Clicking 'id:login-button' using an action chain.</msg>
+<arg>id:login-button</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.518968" elapsed="0.288197"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:45.810242" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="ab9a3100-db14-4922-9c4f-0330df9dcf38", element="9c00fa9c-bb15-4cb3-8733-30e663fd3f8d")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='error-message-container error']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.807165" elapsed="0.003077"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${element.text}</arg>
+<arg>${err_attendue}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.810242" elapsed="0.017626"/>
+</kw>
+<arg>locked_out_user</arg>
+<arg>secret_sauce</arg>
+<arg>Sorry, this user has been locked out</arg>
+<doc>test connexion KO avec msg erreur</doc>
+<status status="PASS" start="2024-02-23T16:07:45.433083" elapsed="0.395837"/>
+</kw>
+<kw name="Connexion_Deconnexion_KO" owner="test05_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:45.829977" level="INFO">Typing text '' into text field 'name:user-name'.</msg>
+<arg>name:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.829977" elapsed="0.011312"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:45.842340" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.841289" elapsed="0.010320"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:45.851609" level="INFO">Clicking 'id:login-button' using an action chain.</msg>
+<arg>id:login-button</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:45.851609" elapsed="0.274860"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.128557" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="ab9a3100-db14-4922-9c4f-0330df9dcf38", element="9c00fa9c-bb15-4cb3-8733-30e663fd3f8d")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='error-message-container error']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.126469" elapsed="0.002088"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${element.text}</arg>
+<arg>${err_attendue}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.129602" elapsed="0.007302"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>Username is required</arg>
+<doc>test connexion KO avec msg erreur</doc>
+<status status="PASS" start="2024-02-23T16:07:45.828920" elapsed="0.307984"/>
+</kw>
+<kw name="Connexion_Deconnexion_KO" owner="test05_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.137965" level="INFO">Typing text '' into text field 'name:user-name'.</msg>
+<arg>name:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.137965" elapsed="0.007220"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.146228" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.145185" elapsed="0.023915"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.170171" level="INFO">Clicking 'id:login-button' using an action chain.</msg>
+<arg>id:login-button</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.169100" elapsed="0.272730"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.446043" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="ab9a3100-db14-4922-9c4f-0330df9dcf38", element="9c00fa9c-bb15-4cb3-8733-30e663fd3f8d")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='error-message-container error']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.441830" elapsed="0.004213"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${element.text}</arg>
+<arg>${err_attendue}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.446043" elapsed="0.012598"/>
+</kw>
+<arg>${EMPTY}</arg>
+<arg>secret_sauce</arg>
+<arg>Username is required</arg>
+<doc>test connexion KO avec msg erreur</doc>
+<status status="PASS" start="2024-02-23T16:07:46.136904" elapsed="0.321753"/>
+</kw>
+<kw name="Connexion_Deconnexion_KO" owner="test05_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.459698" level="INFO">Typing text 'standard_user' into text field 'name:user-name'.</msg>
+<arg>name:user-name</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.459698" elapsed="0.024002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.483700" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.483700" elapsed="0.010419"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.494119" level="INFO">Clicking 'id:login-button' using an action chain.</msg>
+<arg>id:login-button</arg>
+<arg>action_chain=True</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.494119" elapsed="0.270420"/>
+</kw>
+<kw name="Get WebElement" owner="SeleniumLibrary">
+<msg time="2024-02-23T16:07:46.767630" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="ab9a3100-db14-4922-9c4f-0330df9dcf38", element="9c00fa9c-bb15-4cb3-8733-30e663fd3f8d")&gt;</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class='error-message-container error']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.765540" elapsed="0.002090"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${element.text}</arg>
+<arg>${err_attendue}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.767630" elapsed="0.007194"/>
+</kw>
+<arg>${userStd}</arg>
+<arg>${EMPTY}</arg>
+<arg>Password is required</arg>
+<doc>test connexion KO avec msg erreur</doc>
+<status status="PASS" start="2024-02-23T16:07:46.458657" elapsed="0.316167"/>
+</kw>
+<status status="PASS" start="2024-02-23T16:07:45.432026" elapsed="1.342798"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-02-23T16:07:46.775863" elapsed="1.704157"/>
+</kw>
+<doc>test site https://www.saucedemo.com/</doc>
+<status status="PASS" start="2024-02-23T16:07:41.297743" elapsed="7.182277"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test05">Test05</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
